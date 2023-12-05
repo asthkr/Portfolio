@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>Work</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -14,79 +14,88 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
       crossorigin="anonymous"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
       referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slider-pro/1.6.0/css/slider-pro.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
     />
   </head>
   <body>
     <div class="header">
       <div class="container-fluid">
-        <div class="d-flex align-items-baseline justify-content-between ">
+        <div class="d-flex align-items-baseline justify-content-between">
           <div class="logo-wrapper">Logo</div>
           <div class="navbar">
             <ul class="d-flex gap-4 mb-0">
-              <li class="nav-link"><a class="text-decoration-none" href="#profile">Profile</a></li>
-              <li class="nav-link"><a class="text-decoration-none" href="#work">Work</a></li>
-              <li class="nav-link"><a class="text-decoration-none" href="#about">About</a></li>
-              <li class="nav-link"><a class="text-decoration-none" href="#contact">Contact</a></li>
+              <li class="nav-link">
+                <a class="text-decoration-none" href="#profile">Profile</a>
+              </li>
+              <li class="nav-link">
+                <a class="text-decoration-none" href="work.html">Work</a>
+              </li>
+              <li class="nav-link">
+                <a class="text-decoration-none" href="#about">About</a>
+              </li>
+              <li class="nav-link">
+                <a class="text-decoration-none" href="#contact">Contact</a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <div class="scrollContainer">
-      <!-- TRADITIONAL Starts -->
+    <div class="hero-section">
+      <div class="container-lg">
+        <div class="svg-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.78 85.15">
+            <g data-name="Layer 2">
+              <path
+                style="fill: rgb(255, 249, 197)"
+                d="M51.3 84.79c32.53-4.54 41.24-49.65 29.5-69.59s-64.91-23-77.15 7.57C-11.48 60.59 23.54 88.66 51.3 84.79z"
+                data-name="Layer 1"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <div class="svg-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 404.9 494.4">
+            <path
+              style="fill: rgb(204, 255, 234)"
+              d="M140.1 19.4c129.5-71.5 315.5 71.5 252 162-43 70-15 122-33 185-19.9 69.7-90.5 129.3-193 128-152-2-202.3-179.5-140-235 100-89-20-166 114-240z"
+            ></path>
+          </svg>
+        </div>
 
-      <div class="trigger-wrap">
-        <div class="traditional-wrap">
-          <section class="traditional traditional1">
-            <h3>About</h3>
-
-            <img src="images/gal01.jpg" />
-          </section>
-
-          <section class="traditional traditional2">
-            <h3>Details</h3>
-
-            <img src="images/banner.jpg" />
-          </section>
-
-          <section class="traditional traditional3">
-            <h3>Qwerty</h3>
-            <img src="images/gal02.jpg" />
-          </section>
-          <section class="traditional traditional4">
-            <h3>awesome</h3>
-            <img src="images/gal07.jpg" />
-          </section>
-          <section class="traditional traditional5">
-            <h3>props</h3>
-            <img src="images/gal08.jpg" />
-          </section>
-          <section class="traditional traditional6">
-            <h3>contacts</h3>
-            <img src="images/gal03.jpg" />
-          </section>
+        <div class="profile-page">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="pri-text">
+                <h3>
+                  UI <span>Design</span><br />
+                  for <span>Good</span>
+                </h3>
+                <span class="dotted-line"></span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="display-pic">
+                <span class="abs-bg"></span>
+                <div class="img-holder"></div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="sec-text">
+                <p>
+                  I'm Ashish,a freelance UX designer based in _______. I craft
+                  accessible websites for brands using tech for good.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- TRADITIONAL Ends -->
     </div>
+
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://unpkg.com/locomotive-scroll@4.0.7/dist/locomotive-scroll.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
   </body>
 </html>

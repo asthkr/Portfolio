@@ -1,101 +1,244 @@
 @import url("https://fonts.googleapis.com/css2?family=Nova+Square&family=Sen:wght@400;500;600;700;800&display=swap");
-body{
-  font-family: 'Nova Square', sans-serif;
-font-family: 'Sen', sans-serif;
+$pri-blk: rgb(36, 36, 36);
+$sec-blk: rgb(131, 131, 131);
+$sec-whi: rgb(225, 225, 225);
+$pri-whi: rgb(255, 255, 255);
+$p-th-clr: #232323;
+$s-th-clr: #eae7dc;
+$nova: "Nova Square", sans-serif;
+$sen: "Sen", sans-serif;
+body {
+  background: $s-th-clr;
+  overflow-x: hidden;
 }
-.header{padding: 20px 30px;
-  // position: absolute;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  border: 1px solid red;
+  padding: 20px 30px;
+  // position: sticky;
   width: 100%;
   top: 0;
-  background: #e9e9e9;
+  left: 0;
+  right: 0;
+  background: $p-th-clr;
   z-index: 999;
-  .nav-link{
-    a{
-      font-family: 'Sen', sans-serif;
-      color: rgb(131, 131, 131);
-      &:hover{
-        color: rgb(36, 36, 36)
+  font-family: $sen;
+  .logo-wrapper {
+    color: $pri-whi;
+    font-size: 22px;
+  }
+  .nav-link {
+    a {
+      position: relative;
+      color: $sec-whi;
+      &::after {
+        background: $sec-whi;
+        content: "";
+        height: 1px;
+        position: absolute;
+        right: 0;
+        bottom: -3px;
+        transform-origin: 0% 100%;
+        transition: all 0.35s;
+        width: 10px;
+        z-index: -1;
+      }
+
+      &:hover {
+        color: $pri-whi;
+        transition: all 0.5s;
+
+        &::after {
+          width: 100%;
+          transition: all 0.5s;
+        }
       }
     }
   }
 }
-.scrollContainer {
-  overflow: hidden !important;
+//html.index//
+.hero-section {
+  width: 100%;
+  height: 110vh;
+  color: $sec-whi;
+  background: $p-th-clr;
+  position: relative;
+  .svg-1 {
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 20vw;
+  }
+  .svg-2 {
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    right: 0;
+    transform: translate(50%, 50%);
+    width: 25vw;
+  }
+  .profile-page {
+    width: 80%;
+    margin: 0 auto;
+    padding: 100px 0;
+    font-family: $sen;
+    .display-pic {
+    }
+    .pri-text {
+      position: relative;
+      &::after {
+        content: ("");
+        position: absolute;
+        bottom: 0;
+        right: -100px;
+        width: 100%;
+        height: 2px;
+        border-bottom: 1px dashed #eae7dc;
+      }
+      h3 {
+        font-weight: 400;
+        text-align: start;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        span {
+          font-weight: 600;
+          font-size: 3.5rem;
+        }
+      }
+    }
+    .sec-text {
+      position: relative;
+      &::after {
+        content: ("");
+        position: absolute;
+        bottom: 0;
+        left: -100px;
+        width: 100%;
+        height: 2px;
+        border-bottom: 1px dashed #eae7dc;
+      }
+      h3 {
+        font-weight: 400;
+        text-align: start;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        span {
+          font-weight: 600;
+          font-size: 3.5rem;
+        }
+      }
+    }
+  }
 }
-
-.traditional-wrap {
+//html.index//
+//html.work//
+.work-slider {
+  width: 100%;
+  position: relative;
+  background: url("../images/workbg.svg");
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  .main-text {
+    position: absolute;
+    top: 25vh;
+    left: 40%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    font-family: $nova;
+    font-size: 8rem;
+    span:nth-child(2) {
+      font-size: 2rem;
+      margin-left: 100px;
+    }
+    span:nth-child(3) {
+      margin-left: 200px;
+    }
+    @media (max-width: 767px) {
+      left: 50%;
+      font-size: 4rem;
+    }
+  }
+  .scrollContainer {
+    overflow: hidden !important;
+  }
+  .traditional-wrap {
     position: relative;
     height: 100vh;
-  width: 100%;
-  display: flex;
+    width: 100%;
+    display: flex;
 
-  }
-  
-  
-  section.traditional {
-     
-      position: absolute;
-      bottom: 0;
+    section.traditional {
       overflow: hidden;
-      width:100%;
-     border: 80px solid  white;
-      height: 100vh;
+      width: 90%;
+      margin: 0 auto;
       flex: 0 0 auto;
-      transition: bottom .8s,opacity .8s cubic-bezier(.645, .045, .355, 1);
+      transition: bottom 0.8s, opacity 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
       display: flex;
       justify-content: center;
       align-items: center;
-      // &.traditional1 {
-      //  z-index: 1;
-      // }
-      // &.traditional2 {
-      //   z-index: 2;
-      // }
-      // &.traditional3 {
-      //   z-index:3 ;
-      // }
-      // &.traditional4 {
-      
-      //   z-index: 4;
-      //  }
-      //  &.traditional5 {
-      //    z-index: 5;
-      //  }
-      //  &.traditional6 {
-      //    z-index:6;
-      //  }
-      h3 { position: absolute;
-      left: 0%;
-      mix-blend-mode: difference;
-      bottom: 0;
-        z-index: 1;  
-        font-family: 'Nova Square', sans-serif;
+      &.traditional1 {
+        z-index: 1;
+      }
+      &.traditional2 {
+        z-index: 2;
+      }
+      &.traditional3 {
+        z-index: 3;
+      }
+      &.traditional4 {
+        z-index: 4;
+      }
+      &.traditional5 {
+        z-index: 5;
+      }
+      &.traditional6 {
+        z-index: 6;
+      }
+      h3 {
+        position: absolute;
+        left: 0%;
+        mix-blend-mode: difference;
+
+        bottom: 0;
+        z-index: 1;
+        font-family: $nova;
         font-size: 14rem;
-        color: rgb(255, 255, 255);
+        color: #616161;
         text-align: center;
         font-weight: 300;
-        letter-spacing: .1rem;
-     
-        @media (max-width:767px) {
-          left: 50%;
-           transform: translate(-50%, -50%);
-          font-size: 4rem;
-          
-        }
+        letter-spacing: 0.1rem;
 
+        @media (max-width: 767px) {
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 4rem;
+        }
       }
-     
+      .overlay {
+        background: rgba($color: #000000, $alpha: 0.3);
+      }
       img {
         position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 50%;
-      z-index: 0;
+        left: 0;
+        top: 0;
+
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+        z-index: 0;
       }
+    }
   }
-  
+}
+//html.work//
