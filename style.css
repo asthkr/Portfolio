@@ -219,7 +219,6 @@ html {
 .work-section {
   width: 100%;
   height: 100vh;
-  background: #616161;
 }
 .work-section .main-box {
   width: 100vw;
@@ -238,23 +237,31 @@ html {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.work-section .main-box .img-holder .img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(226, 228, 216, 0.7);
+}
 .work-section .main-box .sec-text {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 .work-section .main-box .sec-text h2 {
-  color: #eae7dc;
+  color: #232323;
   text-align: center;
   font-family: "Nova Square", sans-serif;
   font-size: 6rem;
 }
 .work-section .main-box .sec-text i {
-  color: #eae7dc;
+  color: #232323;
   font-size: 60px;
   scale: 0.8;
   transition: all 200ms ease-in-out;
