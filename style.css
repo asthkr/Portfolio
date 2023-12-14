@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nova+Square&family=Sen:wght@400;500;600;700;800&display=swap");
 body {
-  background: #eae7dc;
   overflow-x: hidden;
   position: relative;
+  background: #232323 !important;
   height: unset;
 }
 
@@ -15,12 +15,12 @@ body {
 html {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  overflow-scrolling: touch;
+  overscroll-behavior: touch;
 }
 
 .header {
   padding: 20px 30px;
-  position: fixed;
+  position: sticky;
   top: 0%;
   left: 0%;
   right: 0%;
@@ -374,4 +374,121 @@ html {
   -o-object-position: 50% 50%;
      object-position: 50% 50%;
   z-index: 0;
+}
+
+.contact-page {
+  padding: 120px 0;
+  color: rgb(225, 225, 225);
+  background: #232323;
+  font-family: "Sen", sans-serif;
+}
+.contact-page .page-info {
+  padding-bottom: 120px;
+}
+.contact-page .page-info .page-path {
+  color: rgba(225, 225, 225, 0.6);
+}
+.contact-page .page-info .page-path .a-one a,
+.contact-page .page-info .page-path .a-two a {
+  text-decoration: none;
+  color: inherit;
+}
+.contact-page .page-info .page-path .a-one a i,
+.contact-page .page-info .page-path .a-two a i {
+  font-size: 20px;
+}
+.contact-page .page-info .page-path .a-one:hover {
+  color: rgb(225, 225, 225);
+}
+.contact-page .page-info .page-title h1 {
+  font-size: 60px;
+}
+.contact-page .page-data {
+  overflow: hidden;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-color: rgba(234, 231, 220, 0.1);
+}
+.contact-page .page-data .contact-form {
+  padding: 40px 30px;
+}
+.contact-page .page-data .contact-form .f-title,
+.contact-page .page-data .contact-form .info-box .info-label {
+  color: rgb(255, 255, 255);
+  font-size: 0.9rem;
+}
+.contact-page .page-data .contact-form .form-fields {
+  margin-top: 40px;
+}
+.contact-page .page-data .contact-form .form-fields .i-name input,
+.contact-page .page-data .contact-form .form-fields .i-name textarea,
+.contact-page .page-data .contact-form .form-fields .i-mail input,
+.contact-page .page-data .contact-form .form-fields .i-mail textarea,
+.contact-page .page-data .contact-form .form-fields .i-phone input,
+.contact-page .page-data .contact-form .form-fields .i-phone textarea,
+.contact-page .page-data .contact-form .form-fields .i-message input,
+.contact-page .page-data .contact-form .form-fields .i-message textarea {
+  color: rgb(255, 255, 255);
+  background: none;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #232323;
+  padding: 7px;
+}
+.contact-page .page-data .contact-form .form-fields .i-name input:focus,
+.contact-page .page-data .contact-form .form-fields .i-name textarea:focus,
+.contact-page .page-data .contact-form .form-fields .i-mail input:focus,
+.contact-page .page-data .contact-form .form-fields .i-mail textarea:focus,
+.contact-page .page-data .contact-form .form-fields .i-phone input:focus,
+.contact-page .page-data .contact-form .form-fields .i-phone textarea:focus,
+.contact-page .page-data .contact-form .form-fields .i-message input:focus,
+.contact-page .page-data .contact-form .form-fields .i-message textarea:focus {
+  outline: none;
+}
+.contact-page .page-data .contact-form .form-fields .i-button {
+  margin-top: 20px;
+}
+.contact-page .page-data .contact-form .form-fields .i-button button {
+  background: #232323;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 10px 40px;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+.contact-page .page-data .google-maps {
+  height: 100%;
+}
+.contact-page .page-data .google-maps iframe {
+  width: 100%;
+  height: 100%;
+}
+
+footer #icon-list a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgb(225, 225, 225);
+  color: rgb(225, 225, 225);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+footer .copyright {
+  padding: 40px;
+  text-align: center;
+  color: rgba(225, 225, 225, 0.5);
+}
+footer .copyright a {
+  text-decoration: none;
+  color: inherit;
 }/*# sourceMappingURL=style.css.map */
