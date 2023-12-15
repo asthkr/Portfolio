@@ -144,7 +144,7 @@ var tl06 = gsap.timeline({
   scrollTrigger: {
     scroller: ".scrollContainer",
     trigger: ".trigger-wrap",
-    start: "top top-=500%",
+    start: "top top-=501%",
     end: "+=100%",
     ease: Bounce.easeOut,
     toggleActions: "play reverse play reverse",
