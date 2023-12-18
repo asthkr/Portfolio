@@ -11,6 +11,44 @@ body {
   box-sizing: border-box;
 }
 
+@keyframes rotations {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  10% {
+    transform: rotate(15deg) scale(1);
+  }
+  50% {
+    transform: rotate(-180deg) scale(1.3);
+  }
+  100% {
+    transform: rotate(-360deg) scale(1);
+  }
+}
+@keyframes bottomtotop {
+  0% {
+    filter: drop-shadow(0 0 20px #c19a6b);
+    transform: rotate(-10deg);
+  }
+  10% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    filter: drop-shadow(0 0 -10px #c19a6b);
+    transform: rotate(10deg) scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes movementtoright {
+  from {
+    margin-left: 50px;
+  }
+  to {
+    margin-left: 0;
+  }
+}
 html {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
@@ -18,20 +56,27 @@ html {
 }
 
 .header {
-  padding: 20px 30px;
-  position: sticky;
+  padding: 10px 30px;
+  position: fixed;
   top: 0%;
   left: 0%;
   right: 0%;
-  background-color: #232323;
+  background-color: rgba(35, 35, 35, 0.6);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   z-index: 999;
   font-family: "Sen", sans-serif;
 }
 .header .logo-wrapper {
-  color: rgb(255, 255, 255);
-  font-size: 22px;
+  width: 100px;
+  height: 80px;
+}
+.header .logo-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transform: scaleX(-1);
 }
 .header .nav-link a {
   position: relative;
@@ -94,7 +139,7 @@ footer .copyright a {
 .hero-section .svg-1 {
   position: absolute;
   bottom: 0;
-  z-index: 10;
+  z-index: 5;
   left: 0;
   transform: translate(-50%, -50%);
   width: 20vw;
@@ -108,14 +153,30 @@ footer .copyright a {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+.hero-section .svg-1 .social-icons a {
+  color: inherit;
+}
 .hero-section .svg-1 .social-icons a i {
   color: #232323;
   font-size: 24px;
+  transition: all 300ms ease;
+}
+.hero-section .svg-1 .social-icons a:hover .fa-instagram {
+  transition: all 300ms ease;
+  color: #e4405f;
+}
+.hero-section .svg-1 .social-icons a:hover .fa-github {
+  transition: all 300ms ease;
+  color: #211f1f;
+}
+.hero-section .svg-1 .social-icons a:hover .fa-linkedin-in {
+  transition: all 300ms ease;
+  color: #0e76a8;
 }
 .hero-section .svg-2 {
   position: absolute;
   bottom: 0;
-  z-index: 10;
+  z-index: 5;
   right: 0;
   transform: translate(50%, 50%);
   width: 25vw;
@@ -163,6 +224,7 @@ footer .copyright a {
   border-bottom: 1px dashed #eae7dc;
 }
 .hero-section .profile-page .pri-text h3 {
+  font-family: "Nova Square", sans-serif;
   font-weight: 400;
   text-align: start;
   font-size: 2.5rem;
@@ -213,12 +275,13 @@ footer .copyright a {
 }
 
 .cards-section {
-  padding-bottom: 100px;
+  padding: 150px 0 100px 0;
   background: #232323;
 }
 .cards-section .cards-wrapper {
-  height: 250px;
-  width: 80%;
+  position: relative;
+  z-index: 10;
+  width: 100%;
   margin: 0 auto;
 }
 .cards-section .cards-wrapper .card {
@@ -289,6 +352,7 @@ footer .copyright a {
 
 .work-section {
   width: 100%;
+  background-color: #232323;
 }
 .work-section .main-box {
   width: 100%;
@@ -297,23 +361,32 @@ footer .copyright a {
 }
 .work-section .main-box .img-holder {
   width: 100%;
-  height: 550px;
+  height: 500px;
 }
-.work-section .main-box .img-holder img {
+.work-section .main-box .img-holder .image-bg-work {
   width: 100%;
   height: 100%;
-  -o-object-position: 10% 20%;
-     object-position: 10% 20%;
-  -o-object-fit: cover;
-     object-fit: cover;
+}
+.work-section .main-box .img-holder .image-bg-work .svg-3 {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+}
+.work-section .main-box .img-holder .image-bg-work .svg-3 img {
+  animation: rotations 4s linear infinite;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .work-section .main-box .img-holder .img-overlay {
+  border-radius: 5px;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(30, 31, 29, 0.5);
+  top: 25px;
+  left: 25px;
+  right: 25px;
+  bottom: 25px;
+  background-color: rgba(66, 66, 66, 0.5);
 }
 .work-section .main-box .sec-text {
   display: flex;
@@ -350,10 +423,12 @@ footer .copyright a {
   height: 100vh;
   background-size: cover;
   background-attachment: fixed;
+  color: rgb(225, 225, 225);
+  font-family: "Sen", sans-serif;
 }
 .work-slider .main-text {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -450,6 +525,13 @@ footer .copyright a {
   text-align: center;
   font-weight: 300;
   letter-spacing: 0.1rem;
+}
+.work-slider .traditional-wrap section.traditional h3 .icon-holder {
+  animation: movementtoright 2s 0s ease alternate infinite;
+  text-align: center;
+}
+.work-slider .traditional-wrap section.traditional h3 .icon-holder i {
+  font-size: 100px;
 }
 @media (max-width: 767px) {
   .work-slider .traditional-wrap section.traditional h3 {
@@ -568,4 +650,81 @@ footer .copyright a {
 .contact-page .page-data .google-maps iframe {
   width: 100%;
   height: 100%;
+}
+
+.about-page {
+  padding: 120px 0;
+  color: rgb(225, 225, 225);
+  background: #232323;
+  font-family: "Sen", sans-serif;
+}
+.about-page .page-info {
+  padding-bottom: 120px;
+}
+.about-page .page-info .page-path {
+  color: rgba(225, 225, 225, 0.8);
+}
+.about-page .page-info .page-path .a-one a,
+.about-page .page-info .page-path .a-two a {
+  text-decoration: none;
+  color: inherit;
+}
+.about-page .page-info .page-path .a-one a i,
+.about-page .page-info .page-path .a-two a i {
+  font-size: 20px;
+}
+.about-page .page-info .page-path .a-one:hover {
+  color: #c19a6b;
+}
+.about-page .page-info .page-title h1 {
+  font-size: 60px;
+}
+.about-page .page-data {
+  position: relative;
+}
+.about-page .page-data .about-hero-image {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+.about-page .page-data .about-hero-image .img-wrapper {
+  width: 300px;
+  margin: 0 auto;
+  height: 450px;
+  rotate: 8deg;
+  animation: bottomtotop 2s ease;
+}
+.about-page .page-data .about-hero-image .img-wrapper img {
+  filter: brightness(50%);
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about-page .page-data .user-info {
+  scale: 0.9;
+  padding-top: 50px;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+.about-page .page-data .user-info span.divider-line {
+  width: 100%;
+  border-bottom: 1px solid #424242;
+  display: block;
+  margin: 40px 0;
+}
+.about-page .page-data .user-info .details h4 {
+  margin-bottom: 15px;
+  font-size: 28px;
+  font-family: "Nova Square", sans-serif;
+  text-transform: capitalize;
+}
+.about-page .page-data .user-info .details ul {
+  padding: 0;
+  margin: 0;
+  text-transform: capitalize;
+  list-style-type: none;
 }/*# sourceMappingURL=style.css.map */
