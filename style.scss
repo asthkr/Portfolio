@@ -56,7 +56,6 @@ body {
   }
   to{
 margin-left: 0;
-
   }
 }
 html {
@@ -66,17 +65,12 @@ html {
 }
 
 .header {
-  padding: 10px 30px;
   position: fixed;
-
+width: 100vw;
   top: 0%;
-  left: 0%;
-  right: 0%;
-
   background-color: rgba($p-th-clr, .6);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
-
   z-index: 999;
   font-family: $sen;
   .logo-wrapper {
@@ -103,7 +97,7 @@ html {
         bottom: -3px;
         transform-origin: 0% 100%;
         transition: all 0.35s;
-        width: 10px;
+        width: 15%;
         z-index: -1;
       }
 
@@ -124,23 +118,34 @@ footer {
   padding-top: 50px;
   background: $p-th-clr;
   #icon-list {
+
     a {
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       border: 1px solid $brown;
       color: $brown;
+position: relative;
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
       -ms-border-radius: 50%;
       -o-border-radius: 50%;
+      i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+        font-size: 18px;
+      }
     }
   }
   .copyright {
     padding: 40px;
-    text-align: center;
+    text-align: center;    font-size: 14px;
     color: rgba($color: $sec-whi, $alpha: 0.5);
+    text-transform: capitalize;
     a {
+  
       text-decoration: none;
       color: inherit;
     }
@@ -149,7 +154,7 @@ footer {
 //html.index//
 .hero-section {
   width: 100%;
-  height: 110vh;
+padding: 150px 0;
   color: $sec-whi;
   background: $p-th-clr;
   position: relative;
@@ -159,7 +164,7 @@ footer {
     z-index: 5;
     left: 0;
     transform: translate(-50%, -50%);
-    width: 20vw;
+    width: 300px;
     .social-icons {
       display: flex;
       flex-direction: column;
@@ -193,6 +198,7 @@ footer {
         }
       }
     }
+   
   }
   .svg-2 {
     position: absolute;
@@ -200,22 +206,20 @@ footer {
     z-index: 5;
     right: 0;
     transform: translate(50%, 50%);
-    width: 25vw;
+    width: 300px;
   }
   .profile-page {
     width: 80%;
     margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     font-family: $sen;
     .display-pic {
-      margin: 0 auto;
+     
       position: relative;
       z-index: 888;
       overflow: visible;
-
+margin-top: 50px;
       .img-holder {
+       margin: 0 auto;
         overflow: hidden;
         width: 300px;
         height: 300px;
@@ -230,7 +234,7 @@ footer {
       }
     }
     .pri-text {
-      margin-top: -70px;
+
       position: relative;
       &::after {
         content: ("");
@@ -241,7 +245,8 @@ footer {
         height: 1px;
         border-bottom: 1px dashed #eae7dc;
       }
-      h3 {
+      h3 {margin-top: 0 ;
+        margin-bottom: auto;
         font-family: $nova;
         font-weight: 400;
         text-align: start;
@@ -262,7 +267,7 @@ footer {
       }
     }
     .sec-text {
-      margin-top: 230px;
+
       position: relative;
       &::before {
         content: ("");
@@ -273,7 +278,8 @@ footer {
         height: 2px;
         border-bottom: 1px dashed #eae7dc;
       }
-      p {
+      p {margin-top: 100%;
+        margin-bottom: 0;
         font-weight: 400;
         text-align: end;
         font-size: 1rem;
@@ -465,33 +471,7 @@ footer {
     display: flex;
     flex-direction: column;
     z-index: 0;
-    .page-info {
-      .page-path {
-        color: rgba($sec-whi, 0.8);
-        .a-one,
-        .a-two {
-          font-family: $sen;
-          a {
-            text-decoration: none;
-            color: inherit;
-            i {
-              font-size: 20px;
-            }
-          }
-        }
-        .a-one {
-          &:hover {
-            color: $brown !important;
-          }
-        }
-      }
-      .page-title {
-        h1 {
-          color: $pri-whi;
-          font-size: 60px;
-        }
-      }
-    }
+   
     span {
       font-family: $nova;
       font-size: 8rem;
@@ -600,32 +580,7 @@ footer {
   color: $sec-whi;
   background: $p-th-clr;
   font-family: $sen;
-  .page-info {
-    padding-bottom: 120px;
-    .page-path {
-      color: rgba($sec-whi, 0.8);
-      .a-one,
-      .a-two {
-        a {
-          text-decoration: none;
-          color: inherit;
-          i {
-            font-size: 20px;
-          }
-        }
-      }
-      .a-one {
-        &:hover {
-          color: $brown;
-        }
-      }
-    }
-    .page-title {
-      h1 {
-        font-size: 60px;
-      }
-    }
-  }
+ 
   .page-data {
     overflow: hidden;
     border-radius: 5px;
@@ -697,32 +652,7 @@ footer {
   color: $sec-whi;
   background: $p-th-clr;
   font-family: $sen;
-  .page-info {
-    padding-bottom: 120px;
-    .page-path {
-      color: rgba($sec-whi, 0.8);
-      .a-one,
-      .a-two {
-        a {
-          text-decoration: none;
-          color: inherit;
-          i {
-            font-size: 20px;
-          }
-        }
-      }
-      .a-one {
-        &:hover {
-          color: $brown;
-        }
-      }
-    }
-    .page-title {
-      h1 {
-        font-size: 60px;
-      }
-    }
-  }
+ 
   .page-data{
     position: relative;
     .about-hero-image{position: absolute;
@@ -771,3 +701,131 @@ ul{padding: 0;
   }
 }
 //html.about//
+
+@media (max-width: 767px) {
+  
+.header {
+  .logo-wrapper {
+   width: 100px;
+   height: 70px;
+
+  }
+  .nav-link {
+    a {
+      &::after {
+        left:50%;
+        right:auto;
+        transform: translateX(-50%);
+        bottom: -2px;
+        width: 15%;
+      }
+    }
+  }
+}
+footer {
+  
+  #icon-list {
+    a {
+      width: 35px;
+      height: 35px;
+
+      i{
+        font-size: 14px;
+      }
+    }
+  }
+  .copyright {
+
+    font-size: 12px;
+  }
+}
+.work-section {
+
+  .main-box {
+ 
+    .img-holder {
+      
+      .image-bg-work {
+
+        .svg-3 {
+        
+          img {
+            animation: rotations 5s linear  infinite ;
+          
+          }
+        }
+      }
+      .img-overlay {
+      
+        z-index: 6;
+        background-color: rgba(#424242, 0.5);
+      }
+    }
+    .sec-text {
+
+      top: 50%;
+      
+      z-index: 15;
+     
+      h2 {
+        line-height: 1;
+        font-size: 4rem;
+      }
+      
+    }
+  }
+}
+.hero-section {
+
+  .svg-1 { bottom: 20%;
+    width: 200px;   
+  }
+  .svg-2 {
+    width: 200px;
+  }
+  .profile-page {
+
+    .display-pic {
+ margin-top: 0;
+
+
+    }
+    .pri-text {
+      margin-bottom: 40px;
+
+     
+    }
+    .sec-text {
+      margin-top: 40px;
+    }
+      
+    
+  }
+}
+.page-info {
+  padding-bottom: 120px;
+  .page-path {
+    color: rgba($sec-whi, 0.8);
+    .a-one,
+    .a-two {
+      a {
+        text-decoration: none;
+        color: inherit;
+        i {
+          font-size: 20px;
+        }
+      }
+    }
+    .a-one {
+      &:hover {
+        color: $brown;
+      }
+    }
+  }
+  .page-title {
+    h1 {
+      font-size: 60px;
+    }
+  }
+}
+}
