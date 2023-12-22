@@ -87,6 +87,8 @@ html {
     a {
       position: relative;
       color: $sec-whi;
+      text-shadow: 0 0 1px #6e6e6e;
+  
       &::after {
         background: $sec-whi;
         content: "";
@@ -128,12 +130,21 @@ footer {
       -moz-border-radius: 50%;
       -ms-border-radius: 50%;
       -o-border-radius: 50%;
+      transition: all 2000ms cubic-bezier(.47,1.64,.41,.8);
       i {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         font-size: 18px;
+      }
+      &:hover{scale: .9;    
+          border: 1px solid $p-th-clr;
+        transition: all 200ms cubic-bezier(.47,1.64,.41,.8);
+        background:$brown;
+        i{
+          color: $p-th-clr;
+        }
       }
     }
   }
@@ -484,13 +495,14 @@ footer {
         display: flex;
         flex-wrap: nowrap;
         .intro_image {
-          width: 50%;
+          width: 60%;
           position: relative;
           .image-wrap2 {
-            position: relative;
-            bottom: 0;
+            position: absolute;
+            top: 30%;
+            left: 50px;
+            transform: translateY(-50%);
             z-index: 10;
-
             width: 300px;
             height: 450px;
             .intro-img2 {
@@ -539,97 +551,111 @@ footer {
       }
     }
     .slide {
-      .slide_content {
-        height: 100vh;
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        flex-direction: row-reverse;
-        .slide_image {
-          width: 50%;
-          height: 100%;
-          position: relative;
-          .image-wrap {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            .slide-img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      .slide_image {
+        position: absolute;
+        top: 0;
+        left: auto;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        z-index: 1;
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+      }
+      .slide_data {
+        width: 50%;
+        position: absolute;
+        left: 0;
+        z-index: 30;
+        .title {
+          margin-left: 50px;
+          h2 {
+            
+            line-height: 0.8;
+            letter-spacing: -2vw;
+            font-size: 18vw;
+            .project-name{
+              text-transform: capitalize;
             }
           }
         }
-        .slide_data {
-          width: 50%;
-          position: relative;
-          z-index: 30;
-          .title {
-            margin-left: 100px;
-            h2 {
-              line-height: 0.8;
-              letter-spacing: -2vw;
-              font-size: 18vw;
-            }
+
+        .details {
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+          gap: 50px;
+
+          p {
+            width: 75%;
+            font-family: $sen;
+            font-size: 16px;
           }
-
-          .details {
+          a.slide-button {
             display: flex;
-            flex-direction: row-reverse;
             align-items: center;
-            gap: 50px;
-
-            p {
-              width: 75%;
-              font-family: $sen;
-              font-size: 16px;
-            }
-            a.slide-button {
-              display: flex;
-              align-items: center;
-              text-decoration: none;
-              gap: 10px;
-              color: inherit;
-              &:hover {
-                .square .flexi-line {
-                  left: 100%;
-
-                  transform: translate(-50%, -50%) scaleX(0.4);
-                  transition: 600ms all ease-out;
-                }
-                .h-text {
-                  transition: 600ms all ease-out;
-                  opacity: 1;
-                }
+            text-decoration: none;
+            gap: 10px;
+            color: inherit;
+            &:hover {
+              .square .flexi-line {
+                left: 100%;
+                transform: translate(-50%, -50%) scaleX(0.4);
+                transition: 600ms all ease-out;
               }
               .h-text {
-                opacity: 0;
-                transition: 300ms all ease-in;
+                transition: 600ms all ease-out;
+                opacity: 1;
               }
-              .square {
-                position: relative;
+            }
+            .h-text {
+              opacity: 0;
+              transition: 300ms all ease-in;
+            }
+            .square {
+              position: relative;
+              display: block;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              border: 1px solid $pri-whi;
+              .flexi-line {
+                position: absolute;
+                top: 50%;
+                left: 0%;
+                transform: translate(-50%, -50%);
                 display: block;
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                border: 1px solid $pri-whi;
-
-                .flexi-line {
-                  position: absolute;
-                  top: 50%;
-                  left: 0%;
-                  transform: translate(-50%, -50%);
-                  display: block;
-                  width: 60px;
-                  height: 2px;
-                  background: $pri-whi;
-                  transition: 300ms all ease-in;
-                }
+                width: 60px;
+                height: 2px;
+                background: $pri-whi;
+                transition: 300ms all ease-in;
               }
             }
           }
         }
       }
+    }
+    .slide--1 .slide_image {
+      background-image: url("../images/gal07.jpg");
+    }
+    .slide--2 .slide_image {
+      background-image: url("../images/gal10.jpg");
+    }
+    .slide--3 .slide_image {
+      background-image: url("../images/gal09.jpg");
+    }
+    .slide--4 .slide_image {
+      background-image: url("../images/gal08.jpg");
+    }
+    .slide--5 .slide_image {
+      background-image: url("../images/gal01.jpg");
     }
   }
 }
@@ -882,106 +908,90 @@ footer {
     }
   }
   .work-slider {
-
     .slide-container {
       .intro {
         .intro_content {
-         height: fit-content;
-          flex-direction: column-reverse;
-         
+          height: fit-content;
+          flex-direction: column;
+
           .intro_image {
             width: 100%;
             position: relative;
             .image-wrap2 {
-              
-             
-  display: none;
-              
+              position: inherit;
+
+              left: 35%;
+              bottom: -350px;
+              transform: translate(-50%, -50%);
             }
             .image-wrap1 {
-              position: static;
-           
-              transform: none;
-          width: 100vw;
-              height: 400px;
-            
-           
+              position: absolute;
+              top: 50%;
+              left: 65%;
+              transform: translate(-50%, -50%);
+              width: 350px;
+              height: 450px;
+              z-index: 20;
             }
           }
           .intro_data {
             width: 100%;
-     
-            padding: 20px;
+
             .title {
               position: static;
-             
-            
+
+              h2 {
+                text-shadow: 1px 2px 5px #6e6e6e;
+              }
             }
             .details {
-              position:static;
-             
-             
+              position: static;
             }
           }
         }
       }
       .slide {
-        .slide_content {
-          position: relative;
-      
-          flex-direction: row;
-          .slide_image {
-
-            width: 100%;
-            height: 100%;
-            position: absolute;
-           
-            .image-wrap {
-              width: 100%;
-              height: 100%;
-              overflow: hidden;
-              
+        .slide_image {
+          width: 100%;
+          left: 0;
+          right: 0;
+        }
+        .slide_data {
+          width: 80%;
+          height: 100%;
+          padding: 40px;
+          background-color: rgba($color: $p-th-clr, $alpha: 0.5);
+          .title {
+padding-top: 100px;
+            margin-left: 0px;
+            h2 {
+              text-shadow: 1px 2px 5px #424242;
+              line-height: 0.8;
+              letter-spacing: -2vw;
+              font-size: 18vw;
             }
           }
-          .slide_data {
-            width: 80%;
-            height: 100%;
-padding: 40px;
-            background-color:rgba($color: $p-th-clr, $alpha: .5);
-            position: relative;
-            z-index: 30;
-            .title {height: 40%;
-              margin-left: 0px;
-              h2 {
-                line-height: 0.8;
-                letter-spacing: -2vw;
-                font-size: 18vw;
-              }
+
+          .details {
+            align-items: start;
+            flex-direction: column;
+            gap: 0px;
+            justify-content: space-between;
+            p {
+              width: 100%;
+              font-family: $sen;
+              font-size: 16px;
             }
-  
-            .details {
-        align-items: start;
-              flex-direction:column;
-              gap: 0px;
-              justify-content: space-between;
-              p {
-                width: 100%;
-                font-family: $sen;
-                font-size: 16px;
-              }
-              a.slide-button {
-                display: flex;
-                align-items: center;
-                text-decoration: none;
-                gap: 10px;
-              
-                color: inherit;
+            a.slide-button {
+              display: flex;
+              align-items: center;
+              text-decoration: none;
+              gap: 10px;
 
-                .h-text {
-                  opacity: 1;
+              color: inherit;
 
-                }
-               
+              .h-text {
+                opacity: 1;
               }
             }
           }
