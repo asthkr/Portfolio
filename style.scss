@@ -188,7 +188,7 @@ footer {
 }
 //html.index//
 .hero-section {
-  width: 100%;
+  width: 100vw;
   padding: 150px 0;
   color: $sec-whi;
   background: $p-th-clr;
@@ -341,9 +341,10 @@ footer {
     z-index: 10;
     width: 100%;
     margin: 0 auto;
-    .card {
+    .card {height: 250px;
       align-items: center;
       gap: 15px;
+      border-radius: 0;
       -webkit-transition: all 1s ease;
       -moz-transition: all 1s ease;
       -o-transition: all 1s ease;
